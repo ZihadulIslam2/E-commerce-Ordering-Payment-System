@@ -1,0 +1,36 @@
+export const CACHE_KEYS = {
+  PRODUCT: 'product:',
+  PRODUCT_ALL: 'product:all:',
+  ORDER: 'order:',
+  USER: 'user:',
+  CATEGORY: 'category:',
+} as const
+
+export const HTTP_STATUS = {
+  OK: 200,
+  CREATED: 201,
+  BAD_REQUEST: 400,
+  UNAUTHORIZED: 401,
+  FORBIDDEN: 403,
+  NOT_FOUND: 404,
+  PAYMENT_REQUIRED: 402,
+  CONFLICT: 409,
+  INTERNAL_SERVER_ERROR: 500,
+} as const
+
+export const ORDER_STATUS = {
+  PENDING: 'PENDING',
+  CONFIRMED: 'CONFIRMED',
+  PROCESSING: 'PROCESSING',
+  SHIPPED: 'SHIPPED',
+  DELIVERED: 'DELIVERED',
+  CANCELLED: 'CANCELLED',
+} as const
+
+export const PAYMENT_STATUS = {
+  PENDING: 'PENDING',
+  PROCESSING: 'PROCESSING',
+  COMPLETED: 'COMPLETED',
+  FAILED: 'FAILED',
+  REFUNDED: 'REFUNDED',
+} as const
