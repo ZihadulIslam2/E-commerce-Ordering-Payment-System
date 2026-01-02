@@ -16,8 +16,4 @@ prisma.$on('query', (e: any) => {
   }
 })
 
-prisma.$on('error', (e: any) => {
-  logger.error('Prisma Error:', e)
-})
-
 export default prisma
