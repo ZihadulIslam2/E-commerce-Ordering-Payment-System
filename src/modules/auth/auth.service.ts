@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt'
-import jwt from 'jsonwebtoken'
+import jwt, { SignOptions } from 'jsonwebtoken'
 import prisma from '../../config/database'
 import logger from '../../config/logger'
 import { env } from '../../config/env'
@@ -19,9 +19,10 @@ export class AuthService {
    * Generate JWT token for authenticated user
    */
   private generateToken(userId: string, email: string, role: string): string {
-    return jwt.sign({ userId, email, role }, env.JWT_SECRET, {
-      expiresIn: env.JWT_EXPIRE,
-    })
+    const options: SignOptions = {
+      expiresIn: parseInt(env.JWT_EXPIRE, 10),
+    }
+    return jwt.sign({ userId, email, role }, env.JWT_SECRET as string, options)
   }
 
   /**
