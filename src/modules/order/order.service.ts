@@ -62,7 +62,7 @@ export class OrderService {
 
         // Calculate subtotal deterministically: price * quantity
         const price = product.price
-        const subtotal = price.multiply(item.quantity)
+        const subtotal = price.times(item.quantity)
         totalAmount = totalAmount.plus(subtotal)
 
         // Add order item data

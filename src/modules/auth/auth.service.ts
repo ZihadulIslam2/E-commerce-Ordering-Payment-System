@@ -21,7 +21,7 @@ export class AuthService {
   private generateToken(userId: string, email: string, role: string): string {
     const options: SignOptions = {
       // Accept duration strings like '7d' instead of truncating to seconds
-      expiresIn: env.JWT_EXPIRE,
+      expiresIn: env.JWT_EXPIRE as string,
     }
     return jwt.sign({ userId, email, role }, env.JWT_SECRET as string, options)
   }
